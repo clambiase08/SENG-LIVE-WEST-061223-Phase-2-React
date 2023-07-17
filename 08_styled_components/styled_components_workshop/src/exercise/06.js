@@ -1,4 +1,5 @@
 import styled, { ThemeProvider } from "styled-components";
+import React, { useState } from "react";
 
 const lightTheme = {
   primary: "aliceblue",
@@ -7,22 +8,29 @@ const lightTheme = {
 };
 
 // ✅ uncomment the darkTheme ⬇️
-// const darkTheme = {
-//   primary: "rebeccapurple",
-//   color: "white",
-//   background: "black",
-// };
+const darkTheme = {
+  primary: "rebeccapurple",
+  color: "white",
+  background: "black",
+};
 
 export default function App() {
+
+  const [theme, setTheme] = useState(lightTheme);
+
+  function changeTheme() {
+    setTheme(theme === lightTheme? darkTheme : lightTheme);
+  }
+
   // ✅ use the useState hook to make a state variable for theme
-  const theme = lightTheme;
+  // const theme = lightTheme;
 
   // ✅ add click handlers to each button, and set state to change the theme
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        <Button>Use Light Theme</Button>
-        <Button>Use Dark Theme</Button>
+        <Button onClick={changeTheme} >Use Light Theme</Button>
+        <Button onClick={changeTheme} >Use Dark Theme</Button>
       </Wrapper>
     </ThemeProvider>
   );

@@ -2,14 +2,28 @@ import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: "Comic Sans MS", sans-serif;
-    color: red;
+    font-family: "Helvet";
+    color: blue;
   }
 
   a {
     text-decoration: none;
     font-weight: bold;
     color: blue;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: purple;
+  }
+
+  p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: purple;
   }
 
   /* ✅ try adding a global style to all the h1 and p tags */
